@@ -1,4 +1,4 @@
-# Project _NAME_
+# Project Butterfly Garden
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -11,29 +11,28 @@ _REPLACE OR REMOVE EVERYTING BETWEEN "\_"_
 
 ## Simulation Design
 
-_A brief explanation of your simulation._
+A peaceful butterfly garden filled with pretty plants, butterflies and maybe even some fairies if you're lucky.
 
 ### Controls
+- Moving the mouse will scare away the butterflies, but they will move around normally when the player is still
+- Clicking on any agent destroys it
+- Clicking on the background will change the colors/theme of everything including the agents (ex. Day/Night)
 
--   _List all of the actions the player can have in your simulation_
-    -   _Include how to preform each action ( keyboard, mouse, UI Input )_
-    -   _Include what impact an action has in the simulation ( if is could be unclear )_
+## Butterfly
 
-## _Agent 1 Name_
-
-_A brief explanation of this agent._
+Just having a good time amongst the flowers and trying to be friends with the fairies
 
 ### _State 1 Name_
 
-**Objective:** _A brief explanation of this state's objective._
+**Objective:** 
 
 #### Steering Behaviors
 
 - _List all behaviors used by this state_
-   - _If behavior has input data list it here_
-   - _eg, Flee - nearest Agent2_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+    - _If behavior has input data list it here_
+    - _eg, Flee - nearest Agent2_
+- _Obstacles - List all obstacle types this state avoids_
+- _Seperation - List all agents this state seperates from_
    
 #### State Transistions
 
@@ -55,9 +54,9 @@ _A brief explanation of this agent._
 
 - _List all the ways this agent can transition to this state_
 
-## _Agent 2 Name_
+## Fairy
 
-_A brief explanation of this agent._
+Just trying to live it's magical life in peace
 
 ### _State 1 Name_
 
