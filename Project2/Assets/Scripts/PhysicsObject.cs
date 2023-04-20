@@ -23,6 +23,7 @@ public class PhysicsObject : MonoBehaviour
     public Vector3 Velocity => velocity;
     public Vector3 Direction => direction;
     public Vector3 Position => transform.position;
+    public Vector3 Right => transform.right;
     // public Vector3 CameraSize => cameraSize;
 
     public float radius = 1f;

@@ -11,6 +11,9 @@ public class AgentManager : MonoBehaviour
     public List<TagPlayer> tagPlayers = new List<TagPlayer>();
 
     [HideInInspector]
+    public List<Butterfly> butterflies = new List<Butterfly>();
+
+    [HideInInspector]
     public Vector2 maxPosition = Vector2.one;
     [HideInInspector]
     public Vector2 minPosition = -Vector2.one;
@@ -18,6 +21,7 @@ public class AgentManager : MonoBehaviour
     public float edgePadding = 1f;
 
     public TagPlayer tagPlayerPrefab;
+    public Butterfly butterflyPrefab;
     public int numTagPlayers = 10;
 
     public int countdownTime = 5;
@@ -49,10 +53,11 @@ public class AgentManager : MonoBehaviour
 
         for (int i = 0; i < numTagPlayers; i++)
         {
-            tagPlayers.Add(Spawn(tagPlayerPrefab));
+            // tagPlayers.Add(Spawn(tagPlayerPrefab));
+            butterflies.Add(Spawn(butterflyPrefab));
         }
 
-        tagPlayers[0].Tag();
+        // tagPlayers[0].Tag();
     }
 
     private T Spawn<T>(T prefabToSpawn) where T : Agent

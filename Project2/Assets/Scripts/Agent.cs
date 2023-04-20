@@ -26,6 +26,8 @@ public abstract class Agent : MonoBehaviour
 
     public float personalSpace = 1f;
 
+    public float visionRange = 2f;
+
     private void Awake()
     {
         if (physicsObject == null)
@@ -134,6 +136,65 @@ public abstract class Agent : MonoBehaviour
                 float weight = sqrPersonalSpace / (sqrDist + 0.1f);
                 Flee(other.physicsObject.Position, weight);
             }
+        }
+    }
+
+    protected void AvoidObstacle(Obstacle obstacle)
+    {
+        // Get a vector from this agent, to the obstacle
+        Vector3 toObstacle = obstacle.Position - physicsObject.Position;
+
+        // Check if the obstacle is behind this agent
+        float fwdToObstacleDot = Vector3.Dot(physicsObject.Direction, toObstacle);
+
+        if (fwdToObstacleDot < 0)
+        {
+            return;
+        }
+
+        // Check if the obstacle is too far to the left or right
+        float rightToObstacleDot = Vector3.Dot(physicsObject.Right, toObstacle);
+
+        if (Mathf.Abs(rightToObstacleDot) > physicsObject.radius + obstacle.radius)
+        {
+            return;
+        }
+
+        // Check if the obstacle is within our vision range4
+        if (fwdToObstacleDot > visionRange)
+        {
+            return;
+        }
+
+        // We've passed all the checks, avoid the obstacle
+        Vector3 desiredVelocity;
+
+        if (rightToObstacleDot > 0)
+        {
+            // If the obstacle is on the right, steer left
+            desiredVelocity = physicsObject.Right * -maxSpeed;
+        }
+        else
+        {
+            // If the obstacle is on the left, steer right
+            desiredVelocity = physicsObject.Right * maxSpeed;
+        }
+
+        // Create a weight based on how close we are to the obstacle
+        float weight = visionRange / (fwdToObstacleDot + 0.1f);
+
+        // Calculate the steering force from the desired velocity
+        Vector3 steeringForce = (desiredVelocity - physicsObject.Velocity) * weight;
+
+        // Apply the steering force to the total force
+        totalForce += steeringForce;
+    }
+
+    protected void AvoidAllObstacles()
+    {
+        foreach (Obstacle obstacle in ObstacleManager.Instance.obstacles)
+        {
+            AvoidObstacle(obstacle);
         }
     }
 
