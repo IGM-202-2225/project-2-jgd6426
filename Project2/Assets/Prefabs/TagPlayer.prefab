@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1067807479440598693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9201897046591381835}
@@ -50,7 +50,7 @@ MonoBehaviour:
   bounceOffWalls: 0
   useFriction: 0
   frictionCoeff: 0.7
-  radius: 0.25
+  radius: 0.14
 --- !u!114 &1067807479440598698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,9 @@ MonoBehaviour:
   maxWanderAngle: 45
   maxWanderChangePerSecond: 10
   boxSize: {x: 0, y: 0}
-  personalSpace: 1
+  personalSpace: 0.3
+  visionRange: 2
+  visionConeAngle: 45
   visionDistance: 4
   spriteRenderer: {fileID: 1558762048215673102}
   itSprite: {fileID: 21300000, guid: 8d4b28e93ac0ed348a888f901af186d8, type: 3}
