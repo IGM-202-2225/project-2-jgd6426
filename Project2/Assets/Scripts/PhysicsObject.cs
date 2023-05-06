@@ -65,6 +65,7 @@ public class PhysicsObject : MonoBehaviour
         // Zero out the acceleration for the next frame
         acceleration = Vector3.zero;
 
+        // look in the direction object is going
         transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
 
         if (bounceOffWalls)
