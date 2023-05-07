@@ -9,6 +9,7 @@ public class Butterfly : Agent
         Wander();
 
         Flock(AgentManager.Instance.butterflies);
+        Separate(AgentManager.Instance.butterflies);
 
         StayInBounds(3f);
 
