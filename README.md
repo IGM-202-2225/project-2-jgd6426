@@ -2,8 +2,6 @@
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
-_REPLACE OR REMOVE EVERYTING BETWEEN "\_"_
-
 ### Student Info
 
 -   Name: Judy Derrick
@@ -11,16 +9,15 @@ _REPLACE OR REMOVE EVERYTING BETWEEN "\_"_
 
 ## Simulation Design
 
-A peaceful butterfly garden filled with pretty plants, butterflies and maybe even some fairies if you're lucky.
+A peaceful butterfly garden filled with pretty plants, butterflies and bees.
 
 ### Controls
-- Moving the mouse will scare away the butterflies, but they will move around normally when the player is still
+- Moving the mouse will scare away the butterflies and bees (but they will move around normally when the player is still?)
 - Clicking on any agent destroys it
-- Clicking on the background will change the colors/theme of everything including the agents (ex. Day/Night)
 
 ## Butterfly
 
-Just having a good time amongst the flowers and trying to be friends with the fairies
+Just having a good time amongst all the other butterflies
 
 ### _State 1 Name_
 
@@ -28,11 +25,9 @@ Just having a good time amongst the flowers and trying to be friends with the fa
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
-    - _If behavior has input data list it here_
-    - _eg, Flee - nearest Agent2_
-- _Obstacles - List all obstacle types this state avoids_
-- _Seperation - List all agents this state seperates from_
+- Wander, Stay In Bounds, Flock(separate, cohere, align) with other butterflies
+- Obstacles - bees, user's mouse
+- Seperation - bees (obstacle), other butterflies(to the best they can)
    
 #### State Transistions
 
@@ -46,17 +41,18 @@ Just having a good time amongst the flowers and trying to be friends with the fa
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+- Same as before:
+- Wander, Stay In Bounds, Flock(separate, cohere, align) with other butterflies
+- Obstacles - bees, user's mouse
+- Seperation - bees (obstacle), other butterflies(to the best they can)
    
 #### State Transistions
 
 - _List all the ways this agent can transition to this state_
 
-## Fairy
+## Bee
 
-Just trying to live it's magical life in peace
+Just flying around and pollinating flowers
 
 ### _State 1 Name_
 
@@ -64,9 +60,9 @@ Just trying to live it's magical life in peace
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+- Wander, Stay In Bounds
+- Obstacles - other bees (too busy working to socialize), user's mouse
+- Seperation - other bees, butterflies
    
 #### State Transistions
 
@@ -78,9 +74,10 @@ Just trying to live it's magical life in peace
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+- Same as before:
+- Wander, Stay In Bounds
+- Obstacles - other bees (too busy working to socialize), user's mouse
+- Seperation - other bees, butterflies
    
 #### State Transistions
 
@@ -88,18 +85,17 @@ Just trying to live it's magical life in peace
 
 ## Sources
 
--   _List all project sources here –models, textures, sound clips, assets, etc._
--   _If an asset is from the Unity store, include a link to the page and the author’s name_
+-   Background Music by <a href="https://pixabay.com/users/music_for_videos-26992513/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=112623">Music_For_Videos</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=112623">Pixabay</a>
+-   Background Photo by <a href="https://unsplash.com/it/@david_sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Sea</a> on <a href="https://unsplash.com/photos/8fiU55KXLKU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## Make it Your Own
 
-- _List out what you added to your game to make it different for you_
-- _If you will add more agents or states make sure to list here and add it to the documention above_
-- _If you will add your own assets make sure to list it here and add it to the Sources section
+- Made my own butterfly and bee sprite images, added background music
 
 ## Known Issues
 
 _List any errors, lack of error checking, or specific information that I need to know to run your program_
+- currently the bees sometimes manage to fly upside down
 
 ### Requirements not completed
 
