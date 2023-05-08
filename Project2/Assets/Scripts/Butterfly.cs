@@ -6,13 +6,32 @@ public class Butterfly : Agent
 {
     protected override void CalculateSteeringForces()
     {
-        Wander();
 
-        Flock(AgentManager.Instance.butterflies);
-        Separate(AgentManager.Instance.butterflies);
+        if (state)
+        {
+            Wander();
 
-        StayInBounds(3f);
+            Flock(AgentManager.Instance.butterflies);
 
-        AvoidAllObstacles();
+            Flee(MousePosition);
+
+            Separate(AgentManager.Instance.butterflies);
+
+            StayInBounds(3f);
+
+            AvoidAllObstacles();
+        }
+        else
+        {
+            Wander();
+
+            Flock(AgentManager.Instance.butterflies);
+
+            Separate(AgentManager.Instance.butterflies);
+
+            StayInBounds(3f);
+
+            AvoidAllObstacles();
+        }
     }
 }

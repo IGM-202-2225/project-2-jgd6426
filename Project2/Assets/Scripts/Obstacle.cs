@@ -10,9 +10,23 @@ public class Obstacle : Agent
 
     protected override void CalculateSteeringForces()
     {
-        Wander();
 
-        StayInBounds(3f);
+        if (state)
+        {
+            Wander();
+
+            StayInBounds(3f);
+
+            Separate(ObstacleManager.Instance.obstacles);
+        }
+        else
+        {
+            Seek(MousePosition);
+
+            StayInBounds(3f);
+
+            Separate(ObstacleManager.Instance.obstacles);
+        }
 
     }
 

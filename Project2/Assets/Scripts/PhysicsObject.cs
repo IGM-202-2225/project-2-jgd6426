@@ -11,40 +11,29 @@ public class PhysicsObject : MonoBehaviour
     public float mass = 2f;
 
     public bool bounceOffWalls = false;
-
-    // public bool useGravity = false;
     
     public bool useFriction = false;
-    
-    public float frictionCoeff = 0.2f;
 
-    // private Vector3 cameraSize;
+    public bool rotate = true;
+
+    public float frictionCoeff = 0.2f;
 
     public Vector3 Velocity => velocity;
     public Vector3 Direction => direction;
     public Vector3 Position => transform.position;
     public Vector3 Right => transform.right;
-    // public Vector3 CameraSize => cameraSize;
 
     public float radius = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //cameraSize.y = Camera.main.orthographicSize;
-        //cameraSize.x = cameraSize.y * Camera.main.aspect;
-
         direction = Random.insideUnitCircle.normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (useGravity)
-        {
-            ApplyGravity(Physics.gravity);
-        }*/
-
         if (useFriction)
         {
             ApplyFriction(frictionCoeff);
@@ -66,7 +55,10 @@ public class PhysicsObject : MonoBehaviour
         acceleration = Vector3.zero;
 
         // look in the direction object is going
-        transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
+        if (rotate)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
+        }
 
         if (bounceOffWalls)
         {
@@ -89,12 +81,6 @@ public class PhysicsObject : MonoBehaviour
 
         ApplyForce(friction);
     }
-
-/*    // Applies a gravitational force that acts on this object
-    private void ApplyGravity(Vector3 gravityForce)
-    {
-        acceleration += gravityForce;
-    }*/
 
     private void BounceOffWalls()
     {

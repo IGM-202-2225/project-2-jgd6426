@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PhysicsObject))]
 
@@ -22,6 +23,9 @@ public abstract class Agent : MonoBehaviour
     [SerializeField]
     private Vector2 boxSize;
 
+    [SerializeField]
+    private Vector2 mousePosition;
+
     private Bounds bounds;
 
     public float personalSpace = 1f;
@@ -29,6 +33,8 @@ public abstract class Agent : MonoBehaviour
     public float visionRange = 2f;
 
     public float visionConeAngle = 45f;
+
+    public Vector2 MousePosition => mousePosition;
 
     private void Awake()
     {
@@ -38,9 +44,13 @@ public abstract class Agent : MonoBehaviour
         }
     }
 
+    public bool state = true;
+
     // Update is called once per frame
     protected virtual void Update()
     {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         bounds = new Bounds(transform.position, boxSize);
 
         CalculateSteeringForces();
@@ -49,6 +59,8 @@ public abstract class Agent : MonoBehaviour
         physicsObject.ApplyForce(totalForce);
 
         totalForce = Vector3.zero;
+
+        OnMouseDown();
     }
 
     protected abstract void CalculateSteeringForces();
@@ -284,6 +296,21 @@ public abstract class Agent : MonoBehaviour
         foreach (Obstacle obstacle in ObstacleManager.Instance.obstacles)
         {
             AvoidObstacle(obstacle);
+        }
+    }
+
+    public void OnMouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (state)
+            {
+                state = false;
+            }
+            else
+            {
+                state = true;
+            }
         }
     }
 
