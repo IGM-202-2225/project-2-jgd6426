@@ -90,10 +90,9 @@ Just flying around and pollinating flowers
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
-- currently the bees sometimes manage to fly upside down
+- Not an issue, but the bees purposely do not rotate
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+
 
