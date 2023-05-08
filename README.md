@@ -9,79 +9,75 @@
 
 ## Simulation Design
 
-A peaceful butterfly garden filled with pretty plants, butterflies and bees.
+A peaceful butterfly garden filled with pretty butterflies and bees.
 
 ### Controls
-- Moving the mouse will scare away the butterflies and bees (but they will move around normally when the player is still?)
-- Clicking on any agent destroys it
+- Clicking changes all agent's states
+- Depending on the state, moving the cursor either causes the bees to follow the user, or the butterflies to flee from the user
 
 ## Butterfly
 
-Just having a good time amongst all the other butterflies
+Just having a good time witht all the other butterflies
 
-### _State 1 Name_
+### Scared Of The User
 
-**Objective:** 
+**Objective:** Flee from the user's mouse
+
+#### Steering Behaviors
+
+- Flee the user's mouse, Stay In Bounds, Wander, Flock with other butterflies
+- Obstacles - bees, user's mouse
+- Seperation - other butterflies(to the best they can)
+   
+#### State Transistions
+
+- default, but if user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
+   
+### Not Scared Anymore
+
+**Objective:** Stop running away from the user and just wander around
 
 #### Steering Behaviors
 
 - Wander, Stay In Bounds, Flock(separate, cohere, align) with other butterflies
-- Obstacles - bees, user's mouse
+- Obstacles - bees
 - Seperation - bees (obstacle), other butterflies(to the best they can)
    
 #### State Transistions
 
-- _List all the ways this agent can transition to this state_
-   - _eg, When this agent gets within range of Agent2_
-   - _eg, When this agent has reached target of State2_
-   
-### _State 2 Name_
-
-**Objective:** _A brief explanation of this state's objective._
-
-#### Steering Behaviors
-
-- Same as before:
-- Wander, Stay In Bounds, Flock(separate, cohere, align) with other butterflies
-- Obstacles - bees, user's mouse
-- Seperation - bees (obstacle), other butterflies(to the best they can)
-   
-#### State Transistions
-
-- _List all the ways this agent can transition to this state_
+- user clicks, makes cursor into a flower disguise
 
 ## Bee
 
 Just flying around and pollinating flowers
 
-### _State 1 Name_
+### Flying around
 
-**Objective:** _A brief explanation of this state's objective._
+**Objective:** Just fly around and have a chill time
 
 #### Steering Behaviors
 
 - Wander, Stay In Bounds
-- Obstacles - other bees (too busy working to socialize), user's mouse
-- Seperation - other bees, butterflies
+- Obstacles - other bees (too busy working to socialize)
+- Seperation - other bees
    
 #### State Transistions
 
-- _List all the ways this agent can transition to this state_
+- default, but if user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
    
-### _State 2 Name_
+### Pollinate Time
 
-**Objective:** _A brief explanation of this state's objective._
+**Objective:** Seek the flower (user mouse)
 
 #### Steering Behaviors
 
-- Same as before:
-- Wander, Stay In Bounds
-- Obstacles - other bees (too busy working to socialize), user's mouse
-- Seperation - other bees, butterflies
+- Stay In Bounds, Seek the user's mosue
+- Obstacles - other bees
+- Seperation - other bees
    
 #### State Transistions
 
-- _List all the ways this agent can transition to this state_
+- user clicks, makes cursor into a flower disguise
 
 ## Sources
 
@@ -90,14 +86,13 @@ Just flying around and pollinating flowers
 
 ## Make it Your Own
 
-- Made my own butterfly and bee sprite images, added background music
+- Made my own butterfly and bee sprite images, made my own flower cursor sprite, added background music, and background image
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
-- currently the bees sometimes manage to fly upside down
+- Not an issue, but the bees purposely do not rotate
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+
 
