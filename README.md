@@ -9,11 +9,11 @@
 
 ## Simulation Design
 
-A peaceful butterfly garden filled with pretty plants, butterflies and bees.
+A peaceful butterfly garden filled with pretty butterflies and bees.
 
 ### Controls
-- Moving the mouse will scare away the butterflies and bees (but they will move around normally when the player is still?)
-- Clicking on any agent destroys it
+- Clicking changes all agent's states
+- Depending on the state, moving the cursor either causes the bees to follow the user, or the butterflies to flee from the user
 
 ## Butterfly
 
