@@ -1,7 +1,5 @@
 # Project Butterfly Garden
 
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
-
 ### Student Info
 
 -   Name: Judy Derrick
@@ -17,7 +15,7 @@ A peaceful butterfly garden filled with pretty butterflies and bees.
 
 ## Butterfly
 
-Just having a good time witht all the other butterflies
+Just having a good time with all the other butterflies
 
 ### Scared Of The User
 
@@ -27,11 +25,11 @@ Just having a good time witht all the other butterflies
 
 - Flee the user's mouse, Stay In Bounds, Wander, Flock with other butterflies
 - Obstacles - bees, user's mouse
-- Seperation - other butterflies(to the best they can)
+- Separation - other butterflies(to the best they can)
    
-#### State Transistions
+#### State Transitions
 
-- default, but if user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
+- default, but if the user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
    
 ### Not Scared Anymore
 
@@ -41,11 +39,11 @@ Just having a good time witht all the other butterflies
 
 - Wander, Stay In Bounds, Flock(separate, cohere, align) with other butterflies
 - Obstacles - bees
-- Seperation - bees (obstacle), other butterflies(to the best they can)
+- Separation - bees (obstacle), other butterflies(to the best they can)
    
-#### State Transistions
+#### State Transitions
 
-- user clicks, makes cursor into a flower disguise
+- user clicks, makes the cursor into a flower disguise
 
 ## Bee
 
@@ -59,11 +57,11 @@ Just flying around and pollinating flowers
 
 - Wander, Stay In Bounds
 - Obstacles - other bees (too busy working to socialize)
-- Seperation - other bees
+- Separation - other bees
    
-#### State Transistions
+#### State Transitions
 
-- default, but if user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
+- default, but if the user has a flower mouse cursor and they click, the cursor will switch back to the default cursor and trigger the state
    
 ### Pollinate Time
 
@@ -71,13 +69,13 @@ Just flying around and pollinating flowers
 
 #### Steering Behaviors
 
-- Stay In Bounds, Seek the user's mosue
+- Stay In Bounds, Seek the user's mouse
 - Obstacles - other bees
-- Seperation - other bees
+- Separation - other bees
    
-#### State Transistions
+#### State Transitions
 
-- user clicks, makes cursor into a flower disguise
+- user clicks, makes the cursor into a flower disguise
 
 ## Sources
 
@@ -86,7 +84,7 @@ Just flying around and pollinating flowers
 
 ## Make it Your Own
 
-- Made my own butterfly and bee sprite images, made my own flower cursor sprite, added background music, and background image
+- Made the butterfly and bee sprite images, made the flower cursor sprite, added background music, and background image
 
 ## Known Issues
 
